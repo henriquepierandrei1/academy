@@ -1,0 +1,13 @@
+body{
+        background-color: #5D92F5;
+    }
+
+.Login-Form{
+    background-color: white;
+    width: 70%;
+    height: max-content;
+    margin: 10% auto auto auto;
+    box-shadow: 10px 15px 10px rgba(0, 0, 0, 0.096);
+    padding: 30px;
+    border-radius: 15px;
+}

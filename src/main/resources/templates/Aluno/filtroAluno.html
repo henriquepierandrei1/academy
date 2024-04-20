@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inserir Aluno</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+    <body>
+        <div th:replace="~{fragmentos/fragmentos :: cabecalho}"></div>
+
+        <div class="container" style="margin-top:3%;">
+            <h1>Filtrar Alunos</h1>
+            <hr>
+            <br>
+            <form action="" method="post">
+                <div class="input-control col-6">
+                    <input class="form-group" placeholder="Busque pelo o nome do aluno..."  style="width:60%;">
+                    <button type="submit" class="btn btn-success">Pesquisar</button>
+
+                </div>
+            </form>
+            <hr>
+            <div class="row">
+                <div  class="card" style="width:288px">
+                    <img src="#" alt="" class="card-image-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Alunos Ativos do Sistema</h5>
+                        <p class="card-text">Busque por todos os alunos ativos cadastrados no sistema.</p>
+                        <a th:href="@{/alunos-ativos}" class="btn btn-outline-primary">Clique Aqui</a>
+                    </div>
+                </div>
+                <div class="card ml-3" style="width:288px">
+                    <div class="card-body">
+                        <h5 class="card-title">Alunos Inativos do Sistema</h5>
+                        <p class="card-text">Busque por todos os alunos inativos cadastrados no sistema.</p>
+                        <a th:href="@{/alunos-inativos}" class="btn btn-outline-primary">Clique Aqui</a>
+                    </div>
+                </div>
+                <div  class="card ml-3" style="width:288px">
+                    <div class="card-body">
+                        <h5 class="card-title">Alunos Trancados do Sistema</h5>
+                        <p class="card-text">Busque por todos os alunos trancados cadastrados no sistema.</p>
+                        <a th:href="@{/alunos-trancados}" class="btn btn-outline-primary">Clique Aqui</a>
+                    </div>
+                </div>
+                <div  class="card mt-3" style="width:288px">
+                    <div class="card-body">
+                        <h5 class="card-title">Alunos Cancelados do Sistema</h5>
+                        <p class="card-text">Busque por todos os alunos cancelados cadastrados no sistema.</p>
+                        <a th:href="@{/alunos-cancelados}" class="btn btn-outline-primary">Clique Aqui</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

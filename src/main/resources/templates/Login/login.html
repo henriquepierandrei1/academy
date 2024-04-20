@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Henrique Pierandrei"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login-css.css">
+    <title>Academy Project - Login</title>
+    <script src="https://kit.fontawesome.com/0562e2582a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="Login-Form">
+        <div class="container">
+            <div class="main-div">
+                <div class="texto-header">
+                     <h2>Admin Login</h2>
+                    <p>Insira suas credenciais para logar no sistema!</p>
+                </div>
+                <form method="post" action="/login" th:object="${usuario}">
+
+                    <div class="alert alert-danger" role="alert" th:if="${msg}">
+                        <strong th:text="${msg}"></strong>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" th:field="*{email}" placeholder="Username" type="email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" th:field="*{senha}" placeholder="Senha" type="password">
+                    </div>
+                    <div class="cadastro">
+                        <a th:href="@{cadastro}">Não tem cadastro? Clique aqui.</a>
+                    </div>
+                    <button class="btn btn-success">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

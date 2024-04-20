@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Henrique Pierandrei"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style-index.css">
+    <title>Academy Project</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Bem vindo! <span th:text="${session.usuarioLogado.user}"></span></strong>
+    </div>
+
+    <div th:replace="~{fragmentos/fragmentos :: cabecalho}"></div>
+    <section class="neo-section" style="background-image: url('img/background-image.jpg');">
+        <div class="sombra"></div>
+        <div class="center neo-container">
+            <h1 class="text-center">Sistema de gerenciamento de Alunos</h1>
+            <div class="botoes">
+                <div class="wm" >
+                    <h5 th:href="@{/inserirAlunos}" class="btn">Cadastrar Aluno</h5>
+                </div>
+
+                <div class="wm">
+                    <h5 class="btn">Encontrar Aluno</h5>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="modal fade" id="modalPesquisa">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Encontre um aluno</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="pesquisar-aluno" th:object="${aluno}">
+                    <div  class="modal-body">
+                        <input type="text" th:field="*{nome}" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-success">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragmentos/fragmentos :: rodape}"></div>
+
+
+
+
+
+
+
+
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
